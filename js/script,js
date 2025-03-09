@@ -1,0 +1,33 @@
+function loadPage(page) {
+  fetch(page)
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("content").innerHTML = data;
+    })
+    .catch(error => console.error("Error loading page:", error));
+}
+
+ // Handle login form submission
+ document.getElementById('loginForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent default form submission
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
+  // Add your login logic here
+  alert('Login submitted!'); // Placeholder for actual login logic
+  // Close the modal after submission
+  var loginModal = bootstrap.Modal.getInstance(document.getElementById('login'));
+  loginModal.hide();
+});
+
+// Handle signup form submission
+document.getElementById('signupForm').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent default form submission
+  const name = document.getElementById('signupName').value;
+  const email = document.getElementBy.getElementById('signupEmail').value;
+  const password = document.getElementById('signupPassword').value;
+  // Add your signup logic here
+  alert('Sign Up submitted!'); // Placeholder for actual signup logic
+  // Close the modal after submission
+  var signupModal = bootstrap.Modal.getInstance(document.getElementById('signup'));
+  signupModal.hide();
+});
